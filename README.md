@@ -39,8 +39,46 @@ JavaScript is written using Unicode character set. Unicode is superset of ASCII 
   - You can omit the semicolon at the end of program or if the next token in the program is a closing brace(})
 
 
-
 ### Types, Value and Variables
+The types supported by JavaScript can be majorly divided into two categories.
+1. Primitive types (e.g. numbers, strings, booleans)
+2. Object types
+
+And, there are few special primitive types like `null` and `undefined`. Any value that is not in primitive type is object type. An object is collection of properties having values associated. Well, function is also an object. In JavaScript terms, function is an object which has executable code inside it. Classes are also objects.
+
+JavaScript interpreter performs automatic garbage collection for memory management. Programs can create objects as needed and never worry about dellocation of objects. When an object is no longer reachable, interpreter will automatically reclaim the memory so that it could be used for other tasks.
+
+Let's dive deep into each type individually
+
+1. Numbers
+  JavaScript does not distinguish between integer values and floating point values. **All numbers are represented as floating point values** using 64-bits.
+  - Integer literals
+    Integers are written as a base 10 values. Hexadecimal values begins with "0x" or "0X" followed by string of hexadecimal value.
+  - Floating point literals
+    Floating point literals have decimal point. A real value is represented as the integral part of number, followed by decimal point and the fractional part of the number. They can also be represented using exponential notation: a real number followed by the letter e or E, followed by an optional plus or negative sign followed by an integer exponent. The notation represent the real number multiplied by 10 to power of the exponent.
+
+**Few things to note**
+Arithematic in JavaScript does not raise errors in case of overflow, underflow or division by zero. When the result of a numeric operation is larger than the largest representable number(overflow), the result is a special infinity value i.e. `Infinity`. On other hand, when a negative value becomes larger than the largest representable value, the result is a special negative infinity i.e. `-Infinity`.
+
+If underflow occurs due to negative value, a special value is returned `negative zero`. On other hand, if underflow occure due to positive value, only `zero` is returned. `negative zero` is completely indistinguishable from `zero` and programmers rarely need to detect it.
+
+Division by zero is not an error. It simply returns infinity or negative infinity. But, there is one exception, if zero is divided by zero does not have a well defined value, and the result is the special value i.e `NaN`. `NaN` also results because of division of inifinity by infinity or take square root of negative number or use of arithematic operators with non-numeric operands that cannot be converted to numbers. `NaN` has one speciality that it do not compare to other values except itself. That means, we cannot compare x to NaN. Instead, you should write `x!=x`, expression will be true only x is NaN.
+
+2. Date and Times
+   Core JavaScript include a Date() constructor for creating objects that represent dates and times. The object have methods provided for simple date calculations. Following are the methods commonly used for dates
+   1. getFullYear()
+   2. getMonth() //zero based
+   3. getDate() // 1 based
+   4. getDay() // 0 is sunday
+   5. getHours() 
+   6. getUTCHours()
+   7. toString()
+   8. toUTCString()
+   9. toLocaleDateString()
+   10. toLocalTimeString()
+   11. toISOString()
+
+
 
 ### Expressions and Operators
 
