@@ -95,3 +95,6 @@ Division by zero is not an error. It simply returns infinity or negative infinit
 ### Regular expressions
 
 ### And more
+
+# Reference Books 
+- JavaScript - The definitive guide
